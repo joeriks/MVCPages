@@ -24,8 +24,11 @@ namespace MVCPages.Core
 
                 // pageUrl should not start with /
                 var pageUrl = page.Url.TrimStart('/');
-                
+
                 var url = rootUrl + pageUrl;
+
+                if (!string.IsNullOrEmpty(page.Action)) action = page.Action;
+                if (!string.IsNullOrEmpty(page.Controller)) controller = page.Controller;
 
                 routes.MapRoute(
                     name: routePrefix + url,

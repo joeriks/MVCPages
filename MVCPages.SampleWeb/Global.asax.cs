@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
 using MVCPages;
+using MVCPages.SampleWeb.Models;
 
 namespace UrlContent
 {
@@ -13,9 +14,9 @@ namespace UrlContent
     {
         protected void Application_Start()
         {
-            RouteTable.Routes.MapRoutesByFiles(Server.MapPath("~/jsonpages"), "json/");
+            RouteTable.Routes.MapRoutesByFiles(Server.MapPath("~/Pages_Json"), "json/", defaultController: "Page", defaultAction: "Index", defaultType: typeof(PageViewModel));
 
-            RouteTable.Routes.MapRoutesByFiles(Server.MapPath("~/yamlpages"), "yaml/");
+            RouteTable.Routes.MapRoutesByFiles(Server.MapPath("~/Pages_Yaml"), "yaml/", defaultType: typeof(PageViewModel));
 
             RouteTable.Routes.MapRoutesByUrlAttribute("/", "Page", "Index");
 

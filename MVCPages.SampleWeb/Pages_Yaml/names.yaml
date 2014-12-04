@@ -1,0 +1,8 @@
+﻿---
+  Url: "/alt"
+  Type: "MVCPages.SampleWeb.Models.NamesViewModel"
+  Controller: "Names"
+
+  Content:
+    Name: "Works"
+    Title: "Foo"

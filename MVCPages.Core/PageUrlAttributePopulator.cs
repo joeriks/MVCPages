@@ -19,10 +19,14 @@ namespace MVCPages
         {
             foreach (var el in getTypesWithUrlAttribute(assembly).Select((type, i) => new { type, i }))
             {
+
                 var page = new NavigationPage<object>();
                 page.Content = Activator.CreateInstance(el.type);
+                var attr = el.type.GetCustomAttribute<PageUrlAttribute>();
                 page.Order = el.i;
-                page.Url = el.type.GetCustomAttribute<PageUrlAttribute>().Url;
+                page.Action = attr.Action;
+                page.Controller = attr.Controller;
+                page.Url = attr.Url;
                 yield return page;
             }
         }

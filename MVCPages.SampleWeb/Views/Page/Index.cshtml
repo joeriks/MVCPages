@@ -1,6 +1,6 @@
 ﻿@model MVCPages.SampleWeb.Models.PageViewModel
 @{
-    ViewBag.Title = "Home Page";
+    ViewBag.Title = Model.Title;
 }
 
 <div class="jumbotron">
@@ -22,6 +22,10 @@
         <li>
             <a href="/news/new-software">news/new-software</a>
         </li>
+        <li>
+            <a href="/news/old-software">news/old-software ((alternative action and view ))</a>
+        </li>
+
     </ul>
 
 </div>
@@ -44,7 +48,7 @@
             <a href="/yaml">yaml/</a>
         </li>
         <li>
-            <a href="/yaml/news">yaml/news</a>
+            <a href="/yaml/news">yaml/news  ((alternative action and view ))</a>
         </li>
     </ul>
 

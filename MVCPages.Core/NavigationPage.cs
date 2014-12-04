@@ -9,6 +9,9 @@ namespace MVCPages
     public class NavigationPage<T>
     {
         public string Url { get; set; }
+        public string Controller { get; set; }
+        public string Action { get; set; }
+
         public T Content { get; set; }
         private string[] urlParts;
         public string[] UrlParts { get { if (urlParts == null) urlParts = Url.Split('/'); return urlParts; } }

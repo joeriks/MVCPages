@@ -111,14 +111,17 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\NamesController.cs" />
     <Compile Include="Controllers\PageController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\NamesViewModel.cs" />
     <Compile Include="Models\PageViewModel.cs" />
-    <Compile Include="Pages\default.cs" />
-    <Compile Include="Pages\news\index.cs" />
-    <Compile Include="Pages\news\new-software.cs" />
+    <Compile Include="Pages_POCO\default.cs" />
+    <Compile Include="Pages_POCO\news\index.cs" />
+    <Compile Include="Pages_POCO\news\old-software.cs" />
+    <Compile Include="Pages_POCO\news\new-software.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -130,7 +133,8 @@
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <Content Include="JsonPages\news\index.json" />
+    <Content Include="Pages_Json\news\index.json" />
+    <Content Include="Pages_Yaml\names.yaml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -154,11 +158,13 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Shared\Page.cshtml" />
+    <Content Include="Views\Page\Index.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
-    <None Include="JsonPages\index.json" />
-    <Content Include="YamlPages\index.yaml" />
-    <Content Include="YamlPages\News\index.yaml" />
+    <None Include="Pages_Json\index.json" />
+    <Content Include="Pages_Yaml\index.yaml" />
+    <Content Include="Pages_Yaml\News\index.yaml" />
+    <Content Include="Views\Page\Alternative.cshtml" />
+    <Content Include="Views\Names\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

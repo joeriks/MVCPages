@@ -11,7 +11,12 @@ namespace MVCPages.SampleWeb
     {
         public ActionResult Index(PageViewModel page)
         {
-            return View("Page", page);
+            return View(page);
+        }
+
+        public ActionResult Alternative(PageViewModel page)
+        {
+            return View(page);
         }
     }
 }

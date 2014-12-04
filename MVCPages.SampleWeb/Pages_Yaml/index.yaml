@@ -1,6 +1,5 @@
 ﻿---
   Url: "/"
-  Type: "MVCPages.SampleWeb.Models.PageViewModel"
   Content:
     Header: "YAML"
     Introduction: "Intro"

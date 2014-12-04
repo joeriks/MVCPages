@@ -1,6 +1,9 @@
 ﻿---
   Url: "/news"
   Type: "MVCPages.SampleWeb.Models.PageViewModel"
+  Controller: "Page"
+  Action: "Alternative"
+
   Content:
     Header: "YAML News"
     Introduction: "Intro"

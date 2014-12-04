@@ -12,9 +12,13 @@ namespace MVCPages
     public class PageUrlAttribute : System.Attribute
     {
         public string Url;
+        public string Action;
+        public string Controller;
 
-        public PageUrlAttribute(string url)
+        public PageUrlAttribute(string url, string action = "", string controller = "")
         {
+            this.Action = action;
+            this.Controller = controller;
             this.Url = url;
         }
     }

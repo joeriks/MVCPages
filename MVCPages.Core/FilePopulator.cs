@@ -16,6 +16,9 @@ namespace MVCPages
 {
     public class ContentPage
     {
+        public string Action { get; set; }
+        public string Controller { get; set; }
+
         public string Url { get; set; }
         public string Type { get; set; }
         public object Content { get; set; }
@@ -23,9 +26,11 @@ namespace MVCPages
     public class FilePopulator : NavigationPopulator
     {
         private string rootPath;
-        public FilePopulator(string rootPath)
+        private Type defaultType;
+        public FilePopulator(string rootPath, Type defaultType = null)
         {
             this.rootPath = rootPath;
+            if (defaultType != null) this.defaultType = defaultType;
         }
         public override IEnumerable<NavigationPage<object>> PopulateNavigationPages()
         {
@@ -52,7 +57,17 @@ namespace MVCPages
 
                 var contentPage = Newtonsoft.Json.JsonConvert.DeserializeObject<ContentPage>(jsonContent);
 
-                var pageContent = Newtonsoft.Json.JsonConvert.DeserializeObject(contentPage.Content.ToString(), GetType(contentPage.Type));
+                var type = defaultType;
+                if (contentPage.Type != null)
+                {
+                    type = GetType(contentPage.Type);
+                    if (type == null) throw new Exception("Could not find type " + contentPage.Type);
+                }
+
+                var pageContent = Newtonsoft.Json.JsonConvert.DeserializeObject(contentPage.Content.ToString(), type);
+
+                page.Action = contentPage.Action;
+                page.Controller = contentPage.Controller;
 
                 page.Content = pageContent;
                 page.Order = el.i;
