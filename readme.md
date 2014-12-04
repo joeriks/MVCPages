@@ -1,14 +1,9 @@
 ##MVCPages
-
-
 Easy map content to objects and route them
 
 Create json documents, yaml documents or pocos in your MVC projects, specify url and type and then let MVCPages route it for you.
 
-Included sample running at
-
-[mvcpages.azurewebsites.net](http://mvcpages.azurewebsites.net/) 
-
+**Status**: Working proof of concept, see [mvcpages.azurewebsites.net](http://mvcpages.azurewebsites.net/) 
 
 For example, store index.yaml in a folder called yamlcontent:
 
