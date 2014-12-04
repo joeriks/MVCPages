@@ -1,0 +1,51 @@
+﻿@model MVCPages.SampleWeb.Models.PageViewModel
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>@Model.Header</h1>
+    <p class="lead">@Model.Introduction</p>
+    <p>@Model.BodyText
+</p>
+</div>
+
+<div class="row">
+    Check out the poco samples:
+    <ul>
+        <li>
+            <a href="/">root</a>
+        </li>
+        <li>
+            <a href="/news">news</a>
+        </li>
+        <li>
+            <a href="/news/new-software">news/new-software</a>
+        </li>
+    </ul>
+
+</div>
+<div class="row">
+    Check out the json samples:
+    <ul>
+        <li>
+            <a href="/json">json/</a>
+        </li>
+        <li>
+            <a href="/json/news">json/news</a>
+        </li>
+    </ul>
+
+</div>
+<div class="row">
+    Check out the yaml samples:
+    <ul>
+        <li>
+            <a href="/yaml">yaml/</a>
+        </li>
+        <li>
+            <a href="/yaml/news">yaml/news</a>
+        </li>
+    </ul>
+
+</div>

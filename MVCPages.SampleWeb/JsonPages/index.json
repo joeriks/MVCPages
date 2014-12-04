@@ -1,0 +1,15 @@
+﻿{
+    "Url": "/",
+
+    "Type": "MVCPages.SampleWeb.Models.PageViewModel",
+
+    "Content": {
+
+        "Header": "This is Json index",
+
+        "Introduction": "This is the intro",
+
+        "BodyText": "BodyText"
+    
+    }
+}

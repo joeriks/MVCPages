@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVCPages.Core", "MVCPages.Core\MVCPages.Core.csproj", "{995F4A3F-BD7F-435C-AF2E-654C8CC49C59}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVCPages.SampleWeb", "MVCPages.SampleWeb\MVCPages.SampleWeb.csproj", "{C280A59C-D65B-4BFA-B618-F9F509EBE619}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{995F4A3F-BD7F-435C-AF2E-654C8CC49C59}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{995F4A3F-BD7F-435C-AF2E-654C8CC49C59}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{995F4A3F-BD7F-435C-AF2E-654C8CC49C59}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{995F4A3F-BD7F-435C-AF2E-654C8CC49C59}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C280A59C-D65B-4BFA-B618-F9F509EBE619}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C280A59C-D65B-4BFA-B618-F9F509EBE619}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C280A59C-D65B-4BFA-B618-F9F509EBE619}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C280A59C-D65B-4BFA-B618-F9F509EBE619}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

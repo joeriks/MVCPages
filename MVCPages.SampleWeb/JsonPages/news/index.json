@@ -1,0 +1,15 @@
+﻿{
+    "Url": "/news",
+
+    "Type": "MVCPages.SampleWeb.Models.PageViewModel",
+
+    "Content": {
+
+        "Header": "This is Json news",
+
+        "Introduction": "This is the intro",
+
+        "BodyText": "json does not allow multiline"
+    
+    }
+}

@@ -1,0 +1,10 @@
+﻿---
+  Url: "/news"
+  Type: "MVCPages.SampleWeb.Models.PageViewModel"
+  Content:
+    Header: "YAML News"
+    Introduction: "Intro"
+    BodyText: >
+      Lorem ipsum
+      a lot of lines
+      of text
