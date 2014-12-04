@@ -14,9 +14,9 @@ namespace UrlContent
     {
         protected void Application_Start()
         {
-            RouteTable.Routes.MapRoutesByFiles(Server.MapPath("~/Pages_Json"), "json/", defaultController: "Page", defaultAction: "Index", defaultType: typeof(PageViewModel));
+            RouteTable.Routes.MapRoutesByFiles(Server.MapPath("~/Pages_Json"), "/j", defaultController: "Page", defaultAction: "Index", defaultType: typeof(PageViewModel));
 
-            RouteTable.Routes.MapRoutesByFiles(Server.MapPath("~/Pages_Yaml"), "yaml/", defaultType: typeof(PageViewModel));
+            RouteTable.Routes.MapRoutesByFiles(Server.MapPath("~/Pages_Yaml"), "/y", defaultType: typeof(PageViewModel));
 
             RouteTable.Routes.MapRoutesByUrlAttribute("/", "Page", "Index");
 

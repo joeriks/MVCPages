@@ -135,6 +135,8 @@
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Pages_Json\news\index.json" />
     <Content Include="Pages_Yaml\names.yaml" />
+    <Content Include="Pages_Json\index.json" />
+    <None Include="Properties\PublishProfiles\MVCPages.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -160,7 +162,6 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Page\Index.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
-    <None Include="Pages_Json\index.json" />
     <Content Include="Pages_Yaml\index.yaml" />
     <Content Include="Pages_Yaml\News\index.yaml" />
     <Content Include="Views\Page\Alternative.cshtml" />

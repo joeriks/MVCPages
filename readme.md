@@ -19,6 +19,11 @@ For example, store index.yaml in a folder called yamlcontent:
 		  of text
 
 
+Online sample running at
+
+[mvcpages.azurewebsites.net](http://mvcpages.azurewebsites.net/) 
+
+
 Add the following to your Application_Start():
 
 	RouteTable.Routes.MapRoutesByFiles(Server.MapPath("~/yamlcontent"), "yaml/", "Page", "Index");

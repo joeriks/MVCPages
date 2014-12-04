@@ -22,6 +22,8 @@ namespace MVCPages.Core
                     else if (rootUrl == "/") rootUrl = "";
                 }
 
+                rootUrl = rootUrl.TrimStart('/');
+
                 // pageUrl should not start with /
                 var pageUrl = page.Url.TrimStart('/');
 
