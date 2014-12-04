@@ -51,6 +51,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DefaultPageController.cs" />
     <Compile Include="Navigation.cs" />
     <Compile Include="NavigationPage.cs" />
     <Compile Include="NavigationPopulator.cs" />

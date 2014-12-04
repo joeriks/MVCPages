@@ -1,0 +1,7 @@
+﻿---
+  Url: "john-smith-dynamic"
+  View: "DynamicName"
+
+  Content:
+    FirstName: "John"
+    FamilyName: "Smith"

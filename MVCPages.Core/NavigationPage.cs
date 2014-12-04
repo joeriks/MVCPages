@@ -11,6 +11,7 @@ namespace MVCPages
         public string Url { get; set; }
         public string Controller { get; set; }
         public string Action { get; set; }
+        public string View { get; set; }
 
         public T Content { get; set; }
         private string[] urlParts;
@@ -19,7 +20,7 @@ namespace MVCPages
         public string ParentUrl { get { return Url.Substring(0, Url.Length - Name.Length - 1); } }
         public int Order { get; set; }
         public bool Hidden { get; set; }
-        
+
     }
 
 }

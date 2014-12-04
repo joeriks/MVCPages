@@ -12,6 +12,55 @@
     <div class="container body-content">
         @RenderBody()
         <hr />
+        <div class="row">
+            Check out the poco samples:
+            <ul>
+                <li>
+                    <a href="/">root</a>
+                </li>
+                <li>
+                    <a href="/news">news</a>
+                </li>
+                <li>
+                    <a href="/news/new-software">news/new-software</a>
+                </li>
+                <li>
+                    <a href="/news/old-software">news/old-software ((alternative action and view ))</a>
+                </li>
+
+            </ul>
+
+        </div>
+        <div class="row">
+            Check out the json samples:
+            <ul>
+                <li>
+                    <a href="/j">json/</a>
+                </li>
+                <li>
+                    <a href="/j/news">json/news</a>
+                </li>
+            </ul>
+
+        </div>
+        <div class="row">
+            Check out the yaml samples:
+            <ul>
+                <li>
+                    <a href="/y">yaml/</a>
+                </li>
+                <li>
+                    <a href="/y/news">yaml/news  ((alternative action and view ))</a>
+                </li>
+                <li>
+                    <a href="/y/names">yaml/names  ((alternative model and controller ))</a>
+                </li>
+                <li>
+                    <a href="/y/john-smith-dynamic">yaml/john-smith-dynamic ((dynamic model and controller-less (built in controller)))</a>
+                </li>
+            </ul>
+
+        </div>
         <footer>
             <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
         </footer>

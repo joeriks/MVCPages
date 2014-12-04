@@ -18,6 +18,7 @@ namespace MVCPages
     {
         public string Action { get; set; }
         public string Controller { get; set; }
+        public string View { get; set; }
 
         public string Url { get; set; }
         public string Type { get; set; }
@@ -47,7 +48,7 @@ namespace MVCPages
                 {
                     var yamlContent = deserializer.Deserialize(new StringReader(fileContent));
                     var sw = new StringWriter();
-                    serializer.Serialize(sw, yamlContent);                    
+                    serializer.Serialize(sw, yamlContent);
                     jsonContent = sw.ToString();
                 }
                 else
@@ -57,19 +58,20 @@ namespace MVCPages
 
                 var contentPage = Newtonsoft.Json.JsonConvert.DeserializeObject<ContentPage>(jsonContent);
 
-                var type = defaultType;
-                if (contentPage.Type != null)
+                if (contentPage.Type == null && defaultType != null) page.Content = Newtonsoft.Json.JsonConvert.DeserializeObject(contentPage.Content.ToString(), defaultType);
+                else if (contentPage.Type == "Dynamic" || (contentPage.Type==null && defaultType == null)) page.Content = Newtonsoft.Json.JsonConvert.DeserializeObject(contentPage.Content.ToString());
+                else
                 {
-                    type = GetType(contentPage.Type);
+                    var type = GetType(contentPage.Type);
                     if (type == null) throw new Exception("Could not find type " + contentPage.Type);
+                    page.Content = Newtonsoft.Json.JsonConvert.DeserializeObject(contentPage.Content.ToString(), type);
                 }
 
-                var pageContent = Newtonsoft.Json.JsonConvert.DeserializeObject(contentPage.Content.ToString(), type);
 
                 page.Action = contentPage.Action;
                 page.Controller = contentPage.Controller;
+                page.View = contentPage.View;
 
-                page.Content = pageContent;
                 page.Order = el.i;
                 page.Url = contentPage.Url;// el.file.Substring(this.rootPath.Length);
                 yield return page;
