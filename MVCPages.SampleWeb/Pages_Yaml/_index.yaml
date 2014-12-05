@@ -1,0 +1,25 @@
+﻿---  
+
+  # All the following properties are optional 
+  # if you omit any of them they will get sensible defaults
+
+  Type: "MVCPages.SampleWeb.Models.PageViewModel"	# defaults to dynamic
+  
+  
+  Url: "/"											# defaults to relative file path - with a special
+                                                    # case where _index.yaml/json translates to the root url
+                                                    # of the folder
+
+
+  Controller: "DefaultPage"							# defaults to built in controller "DefaultPageController
+  Action: "Index"									# defaults to built in controller action "Index"
+
+  Content:											# the content has your data
+    Header: "YAML"
+    Introduction: "Intro"
+    BodyText: >
+        All properties can be a simple string like the ones above.
+        Or a multiline text as this. It can contain <a href="/">HTML</a> 
+        if you need or even markdown - but then you'll have to take care
+        of that in your view or controller. For example you'll need to
+        use Html.Raw() in the view to get unescaped Html.

@@ -27,9 +27,11 @@ Name one of them _index.yaml. That will be the start page for that path (index.h
 
 3. Add a view called SomeView.cshtml to your Views/Shared folder:
 
+
 	<h1>@Model.Header</h1>
 	<div><strong>@Model.Introduction</strong</div>
 	<div>@Model.BodyText</div>
+
 
 4. Done! The pages now opens on the relative paths from inside your yamlfolders folder.
 
