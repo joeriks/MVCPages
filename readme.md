@@ -5,11 +5,43 @@ Create json documents, yaml documents or pocos in your MVC projects, specify url
 
 **Status**: Working proof of concept, see [mvcpages.azurewebsites.net](http://mvcpages.azurewebsites.net/) 
 
-For example, store index.yaml in a folder called yamlcontent:
+###Simple example
+
+1. Save some yaml files in a folder called yamlcontent, add content in a property like this:
+
+    ---
+	   View: "SomeView"
+	   Content:
+           Header: "YAML News"
+		   Introduction: "Intro"
+		   BodyText: >
+		      Lorem ipsum
+		      a lot of lines
+		      of text
+
+Name one of them _index.yaml. That will be the start page for that path (index.html)
+
+2. Add the following line to Global.asax.cs:
+
+	RouteTable.Routes.MapRoutesByFiles(Server.MapPath("~/yamlcontent"));
+
+3. Add a view called SomeView.cshtml to your Views/Shared folder:
+
+	<h1>@Model.Header</h1>
+	<div><strong>@Model.Introduction</strong</div>
+	<div>@Model.BodyText</div>
+
+4. Done! The pages now opens on the relative paths from inside your yamlfolders folder.
+
+###Richer example
+Store index.yaml in a folder called yamlcontent:
 
 	---
 	  Url: "/news"
 	  Type: "MVCPages.SampleWeb.Models.PageViewModel"
+      Controller: "Page"
+	  Action: "Index"
+	  
 	  Content:
 		Header: "YAML News"
 		Introduction: "Intro"
@@ -49,7 +81,7 @@ Add the view Page.cshtml
 	<div class="intro">@Model.Introduction</div>
 	<p>@Model.BodyText</p>
 	
-Done!
+###Done, this page now opens on the url /news
 
 You can also use json for documents (similar to yaml), or C# Pocos with an attribute to specify url:
 

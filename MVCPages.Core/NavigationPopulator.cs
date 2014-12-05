@@ -9,8 +9,10 @@ namespace MVCPages.Core
     {
         public abstract IEnumerable<NavigationPage<object>> PopulateNavigationPages();
 
-        public void MapRoutes(System.Web.Routing.RouteCollection routes, string rootUrl, string controller = "DefaultPage", string action = "Index", string routePrefix = "MVCPages_")
+        public void MapRoutes(System.Web.Routing.RouteCollection routes, string rootUrl, string defaultController = "DefaultPage", string defaultAction = "Index", string routePrefix = "MVCPages_")
         {
+
+
             var pages = PopulateNavigationPages();
             foreach (var page in pages)
             {
@@ -29,8 +31,8 @@ namespace MVCPages.Core
 
                 var url = rootUrl + pageUrl;
 
-                if (!string.IsNullOrEmpty(page.Action)) action = page.Action;
-                if (!string.IsNullOrEmpty(page.Controller)) controller = page.Controller;
+                var action = (string.IsNullOrEmpty(page.Action)) ? defaultAction : page.Action;
+                var controller = (string.IsNullOrEmpty(page.Controller)) ? defaultController : page.Controller;
 
                 routes.MapRoute(
                     name: routePrefix + url,

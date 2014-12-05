@@ -73,7 +73,33 @@ namespace MVCPages
                 page.View = contentPage.View;
 
                 page.Order = el.i;
-                page.Url = contentPage.Url;// el.file.Substring(this.rootPath.Length);
+
+                page.Url = new Func<string>(() =>
+                {
+
+                    if (!string.IsNullOrEmpty(contentPage.Url)) return contentPage.Url;
+
+                    //new Action(() =>
+                    //{
+
+                    //    var x = "c://foo//bar";
+                    //    var y = "c://foo";
+
+
+
+                    //});
+                    
+                    
+
+                    var thisPart = el.file.Substring(this.rootPath.Length);
+                    var withoutExtension = System.IO.Path.ChangeExtension(thisPart, null);
+                    var withCorrectDashes = withoutExtension.Replace("\\", "/");
+                    var withoutEndingIndex = withCorrectDashes.Replace("/_index", "");
+
+                    return withoutEndingIndex;
+
+                })();
+
                 yield return page;
             }
         }

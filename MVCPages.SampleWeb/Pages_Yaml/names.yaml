@@ -1,5 +1,4 @@
 ﻿---
-  Url: "names"
   Type: "MVCPages.SampleWeb.Models.NamesViewModel"
   Controller: "Names"
 

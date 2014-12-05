@@ -136,7 +136,7 @@
     <Content Include="Pages_Json\news\index.json" />
     <Content Include="Pages_Yaml\names.yaml" />
     <Content Include="Pages_Json\index.json" />
-    <Content Include="Pages_Yaml\dynamic.yaml" />
+    <Content Include="Pages_Yaml\john-smith.yaml" />
     <None Include="Properties\PublishProfiles\MVCPages.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -163,8 +163,8 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Page\Index.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
-    <Content Include="Pages_Yaml\index.yaml" />
-    <Content Include="Pages_Yaml\News\index.yaml" />
+    <Content Include="Pages_Yaml\_index.yaml" />
+    <Content Include="Pages_Yaml\News\_index.yaml" />
     <Content Include="Views\Page\Alternative.cshtml" />
     <Content Include="Views\Names\Index.cshtml" />
     <Content Include="Views\Shared\DynamicName.cshtml" />

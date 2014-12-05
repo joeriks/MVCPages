@@ -1,5 +1,4 @@
 ﻿---
-  Url: "/news"
   Type: "MVCPages.SampleWeb.Models.PageViewModel"
   Controller: "Page"
   Action: "Alternative"
