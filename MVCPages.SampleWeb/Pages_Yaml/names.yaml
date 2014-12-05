@@ -1,6 +1,8 @@
 ﻿---
   Type: "MVCPages.SampleWeb.Models.NamesViewModel"
   Controller: "Names"
+  
+  Title: "Yaml page with explicit viewmodel"
 
   Content:
     Name: "Works"

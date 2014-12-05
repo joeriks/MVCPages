@@ -3,6 +3,8 @@
   Controller: "Page"
   Action: "Alternative"
 
+  Title: "Yet another yaml sample page"
+
   Content:
     Header: "YAML News"
     Introduction: "Intro"

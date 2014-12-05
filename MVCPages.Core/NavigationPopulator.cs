@@ -11,10 +11,13 @@ namespace MVCPages.Core
 
         public void MapRoutes(System.Web.Routing.RouteCollection routes, string rootUrl, string defaultController = "DefaultPage", string defaultAction = "Index", string routePrefix = "MVCPages_")
         {
+            var navigation = new Navigation
+            {
+                NavigationPages = PopulateNavigationPages().ToList(),
+                RootUrl = rootUrl
+            };
 
-
-            var pages = PopulateNavigationPages();
-            foreach (var page in pages)
+            foreach (var page in navigation.NavigationPages)
             {
                 // rootUrl should be "" or end with /
 
@@ -37,7 +40,7 @@ namespace MVCPages.Core
                 routes.MapRoute(
                     name: routePrefix + url,
                     url: url,
-                    defaults: new { controller, action, page = page.Content, navigation = pages, view = page.View }
+                    defaults: new { controller, action, page = page.Content, navigation, view = page.View }
                );
             }
         }

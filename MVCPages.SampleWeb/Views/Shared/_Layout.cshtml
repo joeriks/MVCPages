@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿@using MVCPages
+
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -14,57 +16,74 @@
         <hr />
 
         <div class="row">
-            MVCPages demo. See repository at <a href="https://github.com/joeriks/MVCPages">https://github.com/joeriks/MVCPages</a>
+            <div class="col-md-12">
+                MVCPages demo. See repository at <a href="https://github.com/joeriks/MVCPages">https://github.com/joeriks/MVCPages</a>
+            </div>
         </div>
         <div class="row">
-            Check out the poco samples:
-            <ul>
-                <li>
-                    <a href="/">root</a>
-                </li>
-                <li>
-                    <a href="/news">news</a>
-                </li>
-                <li>
-                    <a href="/news/new-software">news/new-software</a>
-                </li>
-                <li>
-                    <a href="/news/old-software">news/old-software ((alternative action and view ))</a>
-                </li>
+            <div class="col-md-12">
+                <strong>Sample sections:</strong>
+                <ul>
+                    <li>
+                        <a href="/">Using POCOs</a>
+                    </li>
+                    <li>
+                        <a href="/j">json/</a>
+                    </li>
+                    <li>
+                        <a href="/y">yaml/</a>
+                    </li>
 
-            </ul>
-
+                </ul>
+            </div>
         </div>
+
         <div class="row">
-            Check out the json samples:
-            <ul>
-                <li>
-                    <a href="/j">json/</a>
-                </li>
-                <li>
-                    <a href="/j/news">json/news</a>
-                </li>
-            </ul>
+            <div class="col-md-12">
+
+                @{var mvcPages = MVCPages.Navigation.GetCurrent();}
+
+                <p><strong>Dynamic Navigation (using metadata and urls):</strong></p>
+                @{
+                    var current = mvcPages.Current();
+                }
+                <p><a href="@(mvcPages.RootUrl + current.Url)">@current.Url</a> : @current.Title</p>
+
+                <p><strong>Parent</strong></p>
+                @{
+
+                    var p = mvcPages.Parent();
+                    if (p != null)
+                    {
+                        <p><a href="@(mvcPages.RootUrl + p.Url)">@p.Url</a>: @p.Title</p>
+                    }
+                    else
+                    {
+                        <p>No parent</p>
+                    }
+                }
+
+
+                <p><strong>Siblings:</strong></p>
+                <ul>
+                    @foreach (var page in mvcPages.Siblings())
+                    {
+                        <li><a href="@(mvcPages.RootUrl + page.Url)">@page.Url</a>: @page.Title</li>
+                    }
+                </ul>
+
+                <p><strong>Children:</strong></p>
+                <ul>
+                    @foreach (var page in mvcPages.Children())
+                    {
+                        <li><a href="@(mvcPages.RootUrl +page.Url)">@page.Url</a>@page.Title</li>
+                    }
+                </ul>
+
+            </div>
 
         </div>
-        <div class="row">
-            Check out the yaml samples:
-            <ul>
-                <li>
-                    <a href="/y">yaml/</a>
-                </li>
-                <li>
-                    <a href="/y/news">yaml/news  ((alternative action and view ))</a>
-                </li>
-                <li>
-                    <a href="/y/names">yaml/names  ((alternative model and controller ))</a>
-                </li>
-                <li>
-                    <a href="/y/john-smith">yaml/john-smith ((dynamic model and controller-less (built in controller)))</a>
-                </li>
-            </ul>
 
-        </div>
         <footer>
             <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
         </footer>

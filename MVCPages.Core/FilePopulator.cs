@@ -23,6 +23,16 @@ namespace MVCPages
         public string Url { get; set; }
         public string Type { get; set; }
         public object Content { get; set; }
+
+        public DateTime? CreatedDateTime { get; set; }
+        public DateTime? UpdatedDateTime { get; set; }
+
+        public int? Order { get; set; }
+        public string Title { get; set; }
+        public string Description { get; set; }
+        public bool? HideInNavigation { get; set; }
+        public object Id { get; set; }
+
     }
     public class FilePopulator : NavigationPopulator
     {
@@ -33,6 +43,18 @@ namespace MVCPages
             this.rootPath = rootPath;
             if (defaultType != null) this.defaultType = defaultType;
         }
+
+        private object getPropertyValueWithReflection(object obj, string propertyName){
+
+            var type = obj.GetType();
+            var prop = type.GetProperty(propertyName);
+
+            if (prop==null) return null;
+            
+            return prop.GetValue(obj);
+
+        }
+
         public override IEnumerable<NavigationPage<object>> PopulateNavigationPages()
         {
             var deserializer = new Deserializer(namingConvention: new PascalCaseNamingConvention());
@@ -72,7 +94,14 @@ namespace MVCPages
                 page.Controller = contentPage.Controller;
                 page.View = contentPage.View;
 
-                page.Order = el.i;
+                page.Order = contentPage.Order??el.i;
+                page.Id = contentPage.Id;
+                page.Title = contentPage.Title;
+                page.Description = contentPage.Description;
+                page.HideInNavigation = contentPage.HideInNavigation;
+
+                page.CreatedDateTime = contentPage.CreatedDateTime;
+                page.UpdatedDateTime = contentPage.UpdatedDateTime;
 
                 page.Url = new Func<string>(() =>
                 {

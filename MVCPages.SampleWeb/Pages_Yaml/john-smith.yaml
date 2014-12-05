@@ -1,5 +1,6 @@
 ﻿---    
   View: "DynamicName"
+  Title: "Yaml page with only view name specified"
 
   Content:
     FirstName: "John"
