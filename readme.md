@@ -1,4 +1,5 @@
 ##MVCPages
+
 Easy map content to objects and route them
 
 Create json documents, yaml documents or pocos in your MVC projects, specify url and type and then let MVCPages route it for you.
@@ -7,17 +8,27 @@ Create json documents, yaml documents or pocos in your MVC projects, specify url
 
 ###Simple example
 
-1. Save some yaml files in a folder called yamlcontent, add content in a property like this:
+1. Save some yaml files in a folder called yamlcontent
 
-    ---
-	   View: "SomeView"
-	   Content:
-           Header: "YAML News"
-		   Introduction: "Intro"
-		   BodyText: >
-		      Lorem ipsum
-		      a lot of lines
-		      of text
+	_index.yaml
+	about.yaml
+	
+	news/
+		_index.yaml
+		release-version.yaml
+		friday-update.yaml
+
+Add content in the files like this:
+
+	---
+	  View: "SomeView"
+	  Content:
+	    Header: "YAML News"
+	    Introduction: "Intro"
+	    BodyText: >
+	      Lorem ipsum
+	      a lot of lines
+	      of text
 
 Name one of them _index.yaml. That will be the start page for that path (index.html)
 
@@ -25,15 +36,13 @@ Name one of them _index.yaml. That will be the start page for that path (index.h
 
 	RouteTable.Routes.MapRoutesByFiles(Server.MapPath("~/yamlcontent"));
 
-3. Add a view called SomeView.cshtml to your Views/Shared folder:
-
+3. Add a view called SomeView.cshtml to your Views/Shared folder
 
 	<h1>@Model.Header</h1>
 	<div><strong>@Model.Introduction</strong</div>
 	<div>@Model.BodyText</div>
 
-
-4. Done! The pages now opens on the relative paths from inside your yamlfolders folder.
+4. Done! The pages now opens on the relative paths from inside your yamlfolders folder, for example "/", "/about" and "/news/friday-update"
 
 ###Richer example
 Store index.yaml in a folder called yamlcontent:
