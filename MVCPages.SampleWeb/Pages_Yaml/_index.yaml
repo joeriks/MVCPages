@@ -13,6 +13,7 @@
 
   Controller: "DefaultPage"				# defaults to built in controller "DefaultPageController
   Action: "Index"					# defaults to built in controller action "Index"
+  View: "Index"                                         # defaults to null = the Action name view for the controller
 
   Content:						# the content has your data
     Header: "YAML"
