@@ -1,4 +1,4 @@
-﻿---  
+---  
 
   # All the following properties are optional 
   # if you omit any of them they will get sensible defaults
@@ -6,14 +6,14 @@
   Type: "MVCPages.SampleWeb.Models.PageViewModel"	# defaults to dynamic
   
   
-  Url: "/"								# defaults to relative file path - with a special
-                                        # case where _index.yaml/json translates to the root url
-                                        # of the folder
+  Url: "/"								# defaults to relative file path - 
+  										# with a special case where _index.yaml/json
+                                        # translates to the root url of the folder
 
 
-  Controller: "DefaultPage"				# defaults to built in controller "DefaultPageController
+  Controller: "DefaultPage"				# defaults to built in controller "DefaultPage"
   Action: "Index"						# defaults to built in controller action "Index"
-  View: "Index"                         # defaults to null = the Action name view for the controller
+  View: "Index"                         # defaults to null = uses Controller/Action
 
   # Metadata properties for navigation and more, all optional
   Title: "Metadata title"				
@@ -32,3 +32,11 @@
         if you need or even markdown - but then you'll have to take care
         of that in your view or controller. For example you'll need to
         use Html.Raw() in the view to get unescaped Html.
+        
+        Okay - so this is edited using "Prose" for Github, lets see how that
+        works out
+---
+
+###MDHeader
+Currently this is not going anywhere, but I guess it could be BodyText by default.
+
