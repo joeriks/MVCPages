@@ -6,15 +6,15 @@
   Type: "MVCPages.SampleWeb.Models.PageViewModel"	# defaults to dynamic
   
   
-  Url: "/"											# defaults to relative file path - with a special
-                                                    # case where _index.yaml/json translates to the root url
-                                                    # of the folder
+  Url: "/"						# defaults to relative file path - with a special
+                                                        # case where _index.yaml/json translates to the root url
+                                                        # of the folder
 
 
-  Controller: "DefaultPage"							# defaults to built in controller "DefaultPageController
-  Action: "Index"									# defaults to built in controller action "Index"
+  Controller: "DefaultPage"				# defaults to built in controller "DefaultPageController
+  Action: "Index"					# defaults to built in controller action "Index"
 
-  Content:											# the content has your data
+  Content:						# the content has your data
     Header: "YAML"
     Introduction: "Intro"
     BodyText: >
